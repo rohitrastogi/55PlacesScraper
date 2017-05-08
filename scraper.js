@@ -119,12 +119,17 @@ function getCommunityData() {
 				$('#tab-pane--community-amenities').find('li').each(function (i, elem) {
 					amenities_list.push($(elem).text())
 				})
-				communityData["amenities_list"] = amenities_list
+				if (amenities_list.length != 0) {
+					communityData["amenities_list"] = amenities_list
+				}
+
 				var clubs_groups_activities_and_classes = []
 				$('#tab-pane--community-lifestyle').find('li').each(function (i, elem) {
 					clubs_groups_activities_and_classes.push($(elem).text())
 				})
-				communityData["clubs_groups_activities_and_classes"] = clubs_groups_activities_and_classes
+				if (clubs_groups_activities_and_classes.length != 0) {
+					communityData["clubs_groups_activities_and_classes"] = clubs_groups_activities_and_classes
+				}
 
 				
 				var overviewHeaders = []
@@ -210,8 +215,6 @@ function getCommunityData() {
 		})
 	}))
 }
-
-
 
 
 function getJson(){
